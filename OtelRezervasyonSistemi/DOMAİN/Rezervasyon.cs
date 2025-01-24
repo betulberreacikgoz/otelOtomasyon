@@ -17,7 +17,6 @@ namespace OtelRezervasyonSistemi.DOMAİN
 
         public int OdaId { get; set; }
 
-        ///public int FaturaId { get; set; } 
 
         public int MusteriId { get; set; }
 

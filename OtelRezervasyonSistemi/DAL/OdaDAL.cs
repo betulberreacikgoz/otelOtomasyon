@@ -25,7 +25,7 @@ namespace OtelRezervasyonSistemi.DAL
             {
                 using (MySqlConnection conn = baglanti.baglantiGetir())
                 {
-                    if (conn == null) return; // Bağlantı başarısızsa çık
+                    if (conn == null) return; 
 
                     string query = "INSERT INTO Oda (oda_isim, oda_fiyat, oda_durum, oda_tip) VALUES (@odaIsim, @odaFiyat, @odaDurum, @odaTip)";
                     using (MySqlCommand cmd = new MySqlCommand(query, conn))
@@ -44,7 +44,7 @@ namespace OtelRezervasyonSistemi.DAL
                 List<Oda> odalar = new List<Oda>();
                 using (MySqlConnection conn = baglanti.baglantiGetir())
                 {
-                    if (conn == null) return odalar; // Bağlantı başarısızsa boş liste döndür
+                    if (conn == null) return odalar; 
 
                     string query = "SELECT * FROM Oda WHERE oda_durum = 'Müsait'";
                     using (MySqlCommand cmd = new MySqlCommand(query, conn))
@@ -71,9 +71,9 @@ namespace OtelRezervasyonSistemi.DAL
         {
             using (MySqlConnection conn = baglanti.baglantiGetir())
             {
-                if (conn == null) return null; // Bağlantı başarısızsa null döndür
+                if (conn == null) return null; 
 
-                string query = "SELECT * FROM Oda WHERE oda_id = @odaId"; // Tablo adı "Oda" olmalı
+                string query = "SELECT * FROM Oda WHERE oda_id = @odaId"; 
                 using (MySqlCommand cmd = new MySqlCommand(query, conn))
                 {
                     cmd.Parameters.AddWithValue("@odaId", oda_id);

@@ -188,7 +188,7 @@ namespace OtelRezervasyonSistemi.DAL
                 cmd.Parameters.AddWithValue("@musteriId", musteriId);
 
                 int result = cmd.ExecuteNonQuery();
-                return result > 0; // Eğer güncelleme başarılıysa true döner
+                return result > 0; 
             }
         }
         
@@ -199,14 +199,14 @@ namespace OtelRezervasyonSistemi.DAL
             List<string> musteriTcList = new List<string>();
             using (MySqlConnection conn = baglanti.baglantiGetir())
             {
-                string query = "SELECT musteri_kimlik FROM Musteri"; // Müşteri tablosundaki musteri_tc'leri al
+                string query = "SELECT musteri_kimlik FROM Musteri"; 
                 using (MySqlCommand cmd = new MySqlCommand(query, conn))
                 {
                     using (MySqlDataReader reader = cmd.ExecuteReader())
                     {
                         while (reader.Read())
                         {
-                            musteriTcList.Add(reader.GetString("musteri_kimlik")); // musteri_tc'yi listeye ekle
+                            musteriTcList.Add(reader.GetString("musteri_kimlik")); 
                         }
                     }
                 }

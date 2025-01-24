@@ -60,28 +60,7 @@ namespace OtelRezervasyonSistemi.DAL
 
 
 
-        //public bool Sil(int musteriKimlikNo)
-        //{
-        //    try
-        //    {
-        //        using (MySqlConnection conn = baglanti.baglantiGetir())
-        //        {
-
-
-        //            string query = "DELETE FROM Musteri WHERE musteri_kimlik = @musteri_kimlik";
-        //            using (MySqlCommand cmd = new MySqlCommand(query, conn))
-        //            {
-        //                cmd.Parameters.AddWithValue("@musteri_kimlik", musteriKimlikNo);
-        //                int etkilenenSatir = cmd.ExecuteNonQuery();
-        //                return etkilenenSatir > 0;
-        //            }
-        //        }
-        //    }
-        //    catch (MySqlException ex)
-        //    {
-        //        throw new Exception("Müşteri silinirken bir hata oluştu: " + ex.Message);
-        //    }
-        //}
+        
 
 
 
@@ -128,19 +107,7 @@ namespace OtelRezervasyonSistemi.DAL
             }
             return rezervasyonlar;
 
-            //public bool Sil(int musteriKimlikNo)
-            //{
-            //    using (MySqlConnection conn = baglanti.baglantiGetir())
-            //    {
-            //        string query = "DELETE FROM Rezervasyon WHERE musteri_kimlik = @musteri_kimlik";
-            //        using (MySqlCommand cmd = new MySqlCommand(query, conn))
-            //        {
-            //            cmd.Parameters.AddWithValue("@musteri_kimlik", musteriKimlikNo);
-            //            int etkilenenSatir = cmd.ExecuteNonQuery();
-            //            return etkilenenSatir > 0; // Eğer etkilenen satır sayısı 0'dan büyükse silme başarılıdır
-            //        }
-            //    }
-            //}
+            
         }
 
        

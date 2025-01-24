@@ -12,7 +12,7 @@ namespace OtelRezervasyonSistemi.SERVİCE
         public class YoneticiService
         {
             private readonly YoneticiDAL _yoneticiDAL;
-           // private readonly YoneticiDAL _rezervasyonDAL;
+
 
             public YoneticiService()
             {
@@ -36,28 +36,7 @@ namespace OtelRezervasyonSistemi.SERVİCE
        
         }
 
-        //public bool RezervasyonSil(int musteriKimlikNo)
-        //{
-        //    if (musteriKimlikNo <= 0)
-        //    {
-        //        throw new ArgumentException("Geçerli bir müşteri kimlik numarası giriniz.");
-        //    }
-
-        //    // Müşterinin rezervasyonunun var olup olmadığını kontrol et
-        //    if ( !_rezervasyonDAL.KimlikNoVarMi(musteriKimlikNo.ToString()))
-        //    {
-        //        throw new KeyNotFoundException($"Kimlik No: {musteriKimlikNo} olan müşteri bulunamadı.");
-        //    }
-
-        //    try
-        //    {
-        //        return _rezervasyonDAL.Sil(musteriKimlikNo);
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        throw new Exception($"ID: {musteriKimlikNo} olan rezervasyon silinirken bir hata oluştu.", ex);
-        //    }
-        //}
+        
     }
     
 
