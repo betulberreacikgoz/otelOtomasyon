@@ -69,15 +69,14 @@ namespace OtelRezervasyonSistemi.UI
         {
             try
             {
-
                 RezervasyonService _rezervasyonService = new RezervasyonService();
 
                 _rezervasyonService.RezervasyonOlustur(
                     girisTarihi: giristarDTP.Value,
                     cikisTarihi: cikistarDTP.Value,
                     odaId: Convert.ToInt32(comboBoxOdaid.SelectedValue),
-                    musteriId: Convert.ToInt32(comboBoxMusteritc.SelectedValue),
-                    musteri_kimlik: Convert.ToInt64((comboBoxMusteritc.SelectedValue))
+                    musteriId: Convert.ToInt32(comboBoxMusteritc.SelectedValue.ToString().Substring(0,6)),
+                    musteri_kimlik: Convert.ToDouble((comboBoxMusteritc.SelectedValue))
                 );
 
                 MessageBox.Show("Rezervasyon başarıyla eklendi.", "Başarılı", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -151,7 +150,7 @@ namespace OtelRezervasyonSistemi.UI
             {
                 if (RezervasyondataGrid.CurrentRow != null)
                 {
-                    int musteriKimlikNo = Convert.ToInt32(RezervasyondataGrid.CurrentRow.Cells["musteri_kimlik"].Value);
+                    double musteriKimlikNo = Convert.ToDouble(RezervasyondataGrid.CurrentRow.Cells["musteri_kimlik"].Value);
                     var silindimi = _rezervasyonService.RezervasyonSil(musteriKimlikNo);
                     if (silindimi)
                     {
@@ -232,11 +231,9 @@ namespace OtelRezervasyonSistemi.UI
             }
         }
 
+        private void comboBoxMusteritc_SelectedIndexChanged(object sender, EventArgs e)
+        {
 
-
-
-       
-
-       
+        }
     }
 }

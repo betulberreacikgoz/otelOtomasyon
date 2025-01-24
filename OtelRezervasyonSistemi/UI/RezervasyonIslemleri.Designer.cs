@@ -174,6 +174,7 @@
             this.comboBoxMusteritc.Name = "comboBoxMusteritc";
             this.comboBoxMusteritc.Size = new System.Drawing.Size(121, 24);
             this.comboBoxMusteritc.TabIndex = 25;
+            this.comboBoxMusteritc.SelectedIndexChanged += new System.EventHandler(this.comboBoxMusteritc_SelectedIndexChanged);
             // 
             // RezervasyonIslemleri
             // 

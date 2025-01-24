@@ -21,21 +21,23 @@ namespace OtelRezervasyonSistemi.DAL
         {
             using (MySqlConnection conn = baglanti.baglantiGetir())
             {
-                string query = "INSERT INTO Rezervasyon (giris_tarih, cikis_tarih, rezervasyon_durum, oda_id, fatura_id, musteri_id) VALUES (@girisTarih, @cikisTarih, @rezervasyonDurum, @odaId, @faturaId, @musteriId)";
+                string query = "INSERT INTO Rezervasyon (giris_tarihi, cikis_tarihi, rezervasyon_durum, oda_id, musteri_kimlik) VALUES (@girisTarih, @cikisTarih, @rezervasyonDurum, @odaId, @MusteriKimlik)";
                 using (MySqlCommand cmd = new MySqlCommand(query, conn))
                 {
                     cmd.Parameters.AddWithValue("@girisTarih", rezervasyon.GirisTarih);
                     cmd.Parameters.AddWithValue("@cikisTarih", rezervasyon.CikisTarih);
                     cmd.Parameters.AddWithValue("@rezervasyonDurum", rezervasyon.RezervasyonDurum);
-                    cmd.Parameters.AddWithValue("@odaId", rezervasyon.OdaId);
-                    cmd.Parameters.AddWithValue("@faturaId", rezervasyon.FaturaId);
-                   // cmd.Parameters.AddWithValue("@musteriId", rezervasyon.MusteriId);
+                    cmd.Parameters.AddWithValue("@odaId", rezervasyon.OdaId);                
+                    //cmd.Parameters.AddWithValue("@faturaId", rezervasyon.FaturaId);
+                    // cmd.Parameters.AddWithValue("@musteriId", rezervasyon.MusteriId);
+                    cmd.Parameters.AddWithValue("@MusteriKimlik", rezervasyon.MusteriKimlik);                   
                     cmd.ExecuteNonQuery();
+                   
                 }
-            }
+            }       
         }
 
-        public bool Sil(int rezervasyonId)
+        public bool Sil(double rezervasyonId)
         {
             try
             {
@@ -91,7 +93,7 @@ namespace OtelRezervasyonSistemi.DAL
                 using (MySqlCommand cmd = new MySqlCommand(query, conn))
                 {
                     cmd.Parameters.AddWithValue("@kimlikNo", kimlikNo);
-                    int sayi = Convert.ToInt32(cmd.ExecuteScalar());
+                    double sayi = Convert.ToDouble(cmd.ExecuteScalar());
                     return sayi > 0;
                 }
             }
@@ -115,6 +117,7 @@ namespace OtelRezervasyonSistemi.DAL
                                 Convert.ToDateTime(reader["giris_tarih"]),
                                 Convert.ToDateTime(reader["cikis_tarih"]),
                                 reader["rezervasyon_durum"].ToString(),
+                                Convert.ToDouble(reader["musteri_kimlik"]),
                                 Convert.ToInt32(reader["oda_id"]),
                                 Convert.ToInt32(reader["fatura_id"]),
                                 Convert.ToInt32(reader["musteri_id"])

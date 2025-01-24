@@ -167,7 +167,7 @@ namespace OtelRezervasyonSistemi.DAL
                 using (MySqlCommand cmd = new MySqlCommand(query, conn))
                 {
                     cmd.Parameters.AddWithValue("@kimlikNo", kimlikNo);
-                    int sayi = Convert.ToInt32(cmd.ExecuteScalar());
+                    double sayi = Convert.ToDouble(cmd.ExecuteScalar());
                     return sayi > 0;
                 }
             }

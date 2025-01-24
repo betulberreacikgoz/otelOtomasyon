@@ -41,9 +41,9 @@ namespace OtelRezervasyonSistemi
 
         private void button1_Click(object sender, EventArgs e)
         {
-            //AnaSayfa anaSayfa = new AnaSayfa();
-            //anaSayfa.Show();
-            //this.Hide();
+        //    AnaSayfa anaSayfa = new AnaSayfa();
+        //    anaSayfa.Show();
+        //    this.Hide();
             
             
             string kimlik = txtKimlik.Text.Trim();
