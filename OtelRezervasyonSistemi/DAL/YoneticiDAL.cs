@@ -54,19 +54,7 @@ namespace OtelRezervasyonSistemi.DAL
                 }
                 return null;
             }
-        //public bool ValidateLogin(string kimlik, string sifre)
-        //{
-        //    using (MySqlConnection conn = baglanti.baglantiGetir())
-        //    {
-        //        string query = "SELECT COUNT(1) FROM Yonetici WHERE yonetici_kimlik = @kimlik AND yonetici_sifre = @sifre";
-        //        using (MySqlCommand cmd = new MySqlCommand(query, conn))
-        //        {
-        //            cmd.Parameters.AddWithValue("@kimlik", kimlik);
-        //            cmd.Parameters.AddWithValue("@sifre", sifre);
-        //            int sayi = Convert.ToInt32(cmd.ExecuteScalar());
-        //            return sayi > 0; // Eğer sonuç 1'den büyükse giriş başarılıdır
-            //    }
-            //}
+       
         }
     
     }
